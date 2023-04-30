@@ -1,6 +1,7 @@
 function calc() {
-	const d = new Date("2024-01-01");
 	const c = new Date();
+	const year = c.getFullYear();
+	const d = new Date(`${year + 1}-01-01`);
 	const t = Math.round((d.getTime() - c.getTime() - 12600000) / 1000);
 	let se = t % 60;
 	let mi = Math.trunc((t / 60) % 60);
@@ -10,5 +11,6 @@ function calc() {
 	document.getElementById("hour").innerText = ho;
 	document.getElementById("minute").innerText = mi;
 	document.getElementById("second").innerText = se;
+	document.getElementById("year").innerText = year;
 }
 setInterval(calc, 1000);
