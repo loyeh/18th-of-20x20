@@ -7,6 +7,15 @@ function calc() {
 	let mi = Math.trunc((t / 60) % 60);
 	let ho = Math.trunc((t / 3600) % 24);
 	let da = Math.trunc(t / 86400);
+	if (se < 10) {
+		se = `0${se}`;
+	}
+	if (mi < 10) {
+		mi = `0${mi}`;
+	}
+	if (ho < 10) {
+		ho = `0${ho}`;
+	}
 	document.getElementById("day").innerText = da;
 	document.getElementById("hour").innerText = ho;
 	document.getElementById("minute").innerText = mi;
